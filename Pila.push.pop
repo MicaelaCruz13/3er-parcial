@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+// Definici?n del nodo de la pila
+typedef struct Nodo {
+	int dato;
+	struct Nodo* siguiente;
+} Nodo;
+
+// Funci?n para insertar un elemento (push)
+void push(Nodo** cima, int valor) {
+	Nodo* nuevo = (Nodo*)malloc(sizeof(Nodo));
+	nuevo->dato = valor;
+	nuevo->siguiente = *cima;
+	*cima = nuevo;
+}
+
+// Funci?n para eliminar un elemento (pop)
+void pop(Nodo** cima) {
+	if (*cima == NULL) {
+		printf("La pila est? vac?a.\n");
+		return;
+	}
+	Nodo* temp = *cima;
+	*cima = (*cima)->siguiente;
+	free(temp);
+}
+
+// Funci?n para mostrar la pila
+void mostrarPila(Nodo* cima) {
+	printf("Contenido de la pila:\n");
+	while (cima != NULL) {
+		printf("%d\n", cima->dato);
+		cima = cima->siguiente;
+	}
+}
+
+int main() {
+	Nodo* pila = NULL;
+	int valor;
+	
+	// Insertar tres valores
+	for (int i = 1; i <= 3; i++) {
+		printf("Ingrese el valor %d: ", i);
+		scanf("%d", &valor);
+		push(&pila, valor);
+	}
+	
+	printf("\nPila despu?s de insertar los 3 valores:\n");
+	mostrarPila(pila);
+	
+	// Eliminar el elemento de la cima
+	printf("\nAplicando pop (eliminando la cima)...\n");
+	pop(&pila);
+	
+	printf("\nPila despu?s del pop:\n");
+	mostrarPila(pila);
+	
+	return 0;
+}
