@@ -1,0 +1,82 @@
+﻿
+
+Programación l
+
+
+
+
+
+
+Recursividad es el proceso de definir algo en términos de si 
+mismo.
+
+Se dice que una función es recursiva cuando se llama a si
+misma. El lenguaje C permite que una función pueda llamarse a sí
+misma. A esta característica se le denomina recursividad.
+
+La recursividad es distinto de la iteración
+
+La recursividad es una alternativa para ejecutar estructuras de
+iteración
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h> 
+#include <conio.h>
+
+long int factorial(int n); 
+
+Int main ()
+{
+
+int valor;
+long int result; 
+printf("\nIngrese numero:"); 
+scanf("%d",&valor);
+if (valor < 0) printf(“Error”); 
+
+else
+{
+
+result=factorial(valor);
+printf("\nEl factorial de %d es %ld",valor,result);
+
+}
+getch(); 
+return 0;
+}
+long int factorial(int n)
+{
+
+long int resp; 
+if(n==1 || n==0)
+
+return 1;
+else RECURSIVIDAD - factorial
+
+resp=n* factorial(n-1); se llama a si misma
+return (resp);
+
+}
+
+
+
+
+
+
+
+
+
+LINK TP
