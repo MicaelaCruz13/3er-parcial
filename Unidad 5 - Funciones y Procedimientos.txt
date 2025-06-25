@@ -1,0 +1,72 @@
+﻿Unidad 5
+Funciones y Procedimientos
+
+Funciones: Una función es un bloque de código que devuelve un valor.
+
+tipo_de_dato nombre_funcion (parámetros) (
+// código
+return valor;
+
+#include <stdio . h>
+// Función que suma dos números enteros
+int sumar (int a, int b) {
+return a+ b;
+}
+int main() {
+int resultado = sumar(5, 3);
+printf("La suma es: %d\n", resultado);
+return 0;
+
+Procedimiento: Un procedimiento es una función que NO devuelve valor. 
+En C, se usa el tipo void.
+
+#include <stdio.h>
+I/ Procedimiento sin valor de retorno
+void saludar() {
+printf(" i¡Hola, bienvenido ! \n");
+int main() {
+saludar); // LLamamos al procedimien to
+return 0;
+
+#include <stdio.h>
+int cuadrado (int x) {
+return x * x;
+void mostrarResultado(int numero, int resultado) {
+printf("El cuadrado de %d es %d\n", nume ro, resul tado) ;
+int main() {
+int n = 4;
+int res = cuadrado (n);
+mostrarResultado (n, res);
+return 0;
+Pasaje de Parámetros
+
+1. Pasaje por valor (el más común en C)
+
+La función recibe una copia del valor original. Si la función modifica el 
+valor, no afecta al original.
+
+2. Pasaje por referencia (usando punteros)
+
+
+/Pasaje por Valor/
+#include <stdiio . h>
+void duplicar(int x) {
+X = X * 2;
+printf("Dentro de la funcion: %d\n", x) ;
+int main() {
+int nume ro = 5;
+duplicar (numero);
+printf("Fuera de la funcion: Kd\n", numero);
+return 0;
+
+/Pasaje por Valor/
+#include <stdiio . h>
+void duplicar(int x) {
+X = X * 2;
+printf("Dentro de la funcion: %d\n", x) ;
+int main() {
+int nume ro = 5;
+duplicar (numero);
+printf("Fuera de la funcion: Kd\n", numero);
+return 0;
+

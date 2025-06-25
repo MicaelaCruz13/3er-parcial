@@ -1,0 +1,103 @@
+﻿Unidad 4 Cola
+
+Una cola (queue) es una estructura de datos donde:
+
+● El primero que entra es el primero que sale.
+
+● En inglés se llama FIFO: First In, First Out.
+
+Imaginá que estás en una fila para comprar entradas:
+
+Inicio -> [Persona 1] → [Persona 2] → [Persona 3] ← Fin
+
+Llega una nueva persona → va al final de la cola.
+Atienden a una persona → se va el que está al 
+inicio de la cola.
+
+Operaciones básicas en una cola
+
+1. Encolar (enqueue): agregar un elemento al final.
+
+2. Desencolar (dequeue): sacar el primer elemento 
+(el que está al frente).
+
+3. Ver frente (peek o front): ver quién está primero 
+(sin sacarlo).
+
+// Estructura de cada nodo
+struct Nodo {
+int dato;
+struct Nodo* siguiente;
+
+1/ Encolar (agregar al final)
+void encolar (struct Nodo** frente, struct Nodo** fin, int volor) {
+struct Nodo* nuevo = (struct Nodo*) malloc (sizeof (struct Nodo));
+nuevo->dato = volor;
+nuevo->siguiente = NULL;
+if (*fin == NULL) {
+*frente =fin = nuevo ;
+) else {
+(*fin)->siguiente
+nuevO;
+*fin = nuevo;
+printf("Se encol6: %d\n", valor);
+
+I/ Desencolar (sacar del frente)
+int desencolar (struct Nodo** frente, struct Nodo** fin) {
+if (frente == NULL) {
+printf("La cola está vacía.\n");
+return -1;
+struct Nodo* temp =frente;
+int valor = temp->dato;
+*frente = (frente)->siguiente;
+if (frente = NULL) {
+fin = NULL;
+free(tenp);
+return valor;
+
+1/ Mostrar la cola
+void mostrar (struct Nodo* frente) {
+printf("Contenido de la cola:\n");
+while (frente != NULL) {
+printf("%d -> ", fren te->dato);
+frente = frente->siguiente;
+printf("NULL\n");
+
+int main() (
+struct Nodo* frente = NULL;
+struct Nodo* fin = NULL;
+I/Encolamos valores
+encolar (&frente, &fin, 10);
+encolar (&frente, &fin, 20);
+encolar (&frente, &fin, 30);
+mostrar(frente);
+/ Desencolamos uno
+int valor = desencolar (&frente, &fin);
+printf(""Se desencoló: %d\n", valor);
+mostrar (frente);
+return 0;
+
+
+
+
+
+
+
+
+
+
+Cosas importantes para recordar
+
+● La cola es como una fila: el primero en llegar es el primero en salir.
+● Se usan punteros y estructuras para hacerla crecer y reducirse 
+
+dinámicamente.
+● Las funciones encolar() y desencolar() manejan los datos como 
+
+si fueran personas en una fila.
+● Las colas se usan en:
+
+○ Sistemas de impresión
+○ Turnos en bancos
+○ Comunicación entre programas
+○ Juegos (para manejar acciones o eventos)

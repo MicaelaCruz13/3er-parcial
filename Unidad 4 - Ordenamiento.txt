@@ -1,0 +1,83 @@
+﻿Unidad 4 Ordenamiento
+
+Ordenamiento
+
+La ordenación consiste en organizar los elementos 
+de un arreglo en un orden específico, ya sea:
+
+● Ascendente (menor a mayor)
+
+● Descendente (mayor a menor)
+
+Métodos más comunes
+
+Burbuja (Bubble Sort)
+
+Selección (Selection Sort)
+
+Inserción (Insertion Sort)
+
+Método Burbuja (Bubble Sort)
+
+Compara elementos adyacentes y los 
+intercambia si están en el orden incorrecto. 
+Repite hasta que todo esté ordenado.
+
+int arr[] = (5, 2, 9, 1, 6)};
+int n = sizeof(arr) / sizeof (arr [o]);
+int i, j, temp;
+for (i = 0; i <n - 1; i++) {
+for (j = 0; j <n - i - 1; j+*) (
+if (arr[j] > arr[j + 1]) {
+I/ Intercambio
+temp = arr[jl;
+arrj] arrlj + 1];
+arrlj + 1] = temp;
+printf("Arreglo ordenado: ");
+for (i = 0; i < n; i++) (
+printf("%d", arr[i]);
+
+Método Selección (Selection Sort)
+
+Encuentra el mínimo en cada pasada y lo pone 
+en su posición correcta.
+
+int arr[] (5, 2, 9, 1, 6);
+sizeof (arr) /sizeof (arr [0]);
+int n
+int i, j, temp;
+for (1 s 0; 1 <n-1; ++) {
+for (j = 0; j < n - 1 - 1; j++) {
+1f (arr[J] > arr[j + 1]) (
+I/ Intercambio
+temp = arr[j];
+arr[j] = arr[j + 1];
+arr[j + 1] = temp;
+printf("Arreglo ordenado: ");
+for (1 0; 1 < n; 14+) {
+printf("%d ", arr[1]);
+
+Método Inserción (Insertion Sort)
+
+Inserta cada elemento en su lugar correcto 
+como si estuvieras ordenando cartas en la mano.int arr[] = (8, 3, 5, 2, 4);
+int n = sizeof(arr) / sizeof (arr[0]);
+int i, key, j;
+for (i = 1; i< n; i++) {
+key = arr[il;
+j= i - 1;
+1/ Mueve los elementos mayores al key
+while (G = 0 && arr[j]> key){
+arr[j + 1] = arr[j];
+j--;
+arr[j + 1] = key;
+printf("Arreglo ordenado: ");
+for (i = 0; i< n; i++)(
+printf("%d ", arr[i]);
+
+Comparación entre métodos
+
+método.comparaciones.facil de entender. eficiente
+burbuja.muchas.si.no
+selecciónmenos que burbuja.si.no
+inserción.menos si esta casi ordenado.si.regular

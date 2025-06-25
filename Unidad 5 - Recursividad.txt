@@ -1,0 +1,117 @@
+﻿Unidad 5 Recursividad
+
+La recursividad es una técnica de programación en la que una función
+se llama a sí misma para resolver un problema más pequeño del
+mismo tipo.
+
+Es como cuando te mirás en un espejo frente a otro espejo y ves una
+imagen dentro de otra imagen... dentro de otra imagen...
+
+Una función recursiva tiene dos partes importantes:
+
+1. Caso base (condición de parada): evita que la función se llame
+infinitamente.
+
+2. Llamada recursiva: la función se llama a sí misma con un nuevo
+valor más cerca del caso base.
+
+
+
+¿Qué pasa si NO hay caso base?
+La función se llamaría a sí misma para 
+siempre → se produce un 
+desbordamiento de pila (stack 
+overflow) y el programa se cae… o 
+EXPLOTA!!!! 
+
+
+
+¿Cuándo usar recursividad?
+
+Usá recursividad cuando:
+
+● El problema se puede dividir en subproblemas más 
+pequeños.
+
+● No se necesita guardar muchos resultados intermedios (aunque 
+esto puede optimizarse con técnicas como "memoización").
+
+● Te conviene escribir menos código y más elegante (por ejemplo, 
+para árboles, fractales, estructuras jerárquicas).
+
+
+
+Cuidados con la recursividad
+
+1. Siempre debe tener un caso base que detenga las 
+llamadas.
+
+2. Puede ser más lenta que las soluciones iterativas si no 
+se optimiza.
+
+3. Consume más memoria por las llamadas anidadas en 
+la pila.
+
+
+
+Criterio Recursividad Estructura Repetitiva
+
+Concepto Una función se llama a sí misma para resolver un Se repite un bloque de código usando for, while o do-
+problema. while.
+
+Código más legible Sí, en problemas como factorial, torres de Hanoi, árboles. No tanto para problemas muy recursivos.
+
+Uso de memoria Alto: cada llamada ocupa espacio en la pila (stack). Bajo: usa una sola variable de control.
+
+Velocidad (performance) Más lento si hay muchas llamadas (por sobrecarga de Más rápido en la mayoría de los casos.
+stack).
+
+Riesgo de desbordamiento Sí, puede causar Stack Overflow si no tiene un caso base No hay riesgo de desbordamiento por sí solo.
+correcto.
+
+Adecuado para Problemas recursivos por naturaleza: árboles, Cálculos repetitivos como sumas, multiplicaciones, bucles 
+combinaciones, fractales. comunes.
+
+Fácil de entender al inicio No, puede ser confuso para principiantes. Sí, es más directo.
+
+Conversión a iterativo A veces difícil (ej: algoritmos con múltiples caminos como Fácil de codificar y entender.
+backtracking).
+
+#include <stdio . h>
+//Contar hacia atrás
+void contarAtras (int n) {
+if (n : 0){
+printf("Listo !\n"); // Caso base
+} else {
+I/ Mostrar el número ac tual
+printf("%d\n", n);
+// Llamada recursi va
+contarAtras (n- 1);
+int main() {
+contarAtras (5); // Comenzomos desde 5
+return 0;
+
+#include <stdio . h>
+//Factorial de un número
+int factorial(int n) {
+if (n =: 0 || n
+1) {
+return 1; // Caso base
+} else {
+return n * factorial (n - 1); // Llamada recursiva
+int main() {
+int num = 4;
+printf("El factorial de %d es %d\n", num, factorial (num) ) ;
+return 0;
+
+#include <stdio . h>
+//Serie de Fibonacci
+int fibonacci(int n) {
+if (n : 0) return 0;// Caso base
+if (n : 1) return 1; // Caso base
+return fibonacci (n - 1) + fibonacci (n- 2): / Recursión
+int main() {
+int i:
+for (i = 0; i < 8; i++) {
+printf("%d ", fibonacci(i)) ;
+return 0;
